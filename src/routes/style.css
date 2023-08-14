@@ -1,0 +1,153 @@
+@font-face {
+	font-family: 'Switzer';
+	src: url('Switzer-Regular.otf');
+}
+
+/* Box-Sizing Rule */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove Default Margin and Padding */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* Remove Default List styling */
+
+ul,
+ol {
+	list-style: none;
+}
+
+/* Customizing Links */
+
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+/* Making Images Responsive */
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+	user-select: none;
+	height: auto;
+}
+
+/* Setting the font for form elements */
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Adding smooth scrolling */
+
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Making Focus States a little bit cooler */
+
+@media (prefers-reduced-motion: no-preference) {
+	:focus {
+		transition: outline-offset 0.25s ease;
+	}
+	:focus:not(:active) {
+		outline-offset: 5px;
+	}
+}
+
+/* prefers-reduced-motion */
+
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Styling the body */
+
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+:root {
+	--clr-bg: #ead4a8;
+	--clr-txt: #000;
+	--clr-acc-1: #e0836e;
+	--clr-acc-2: #76ac74;
+
+	--ff-sans: 'Switzer', sans-serif;
+	--ff-serif: serif;
+
+	--step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+	--step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+	--step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+	--step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+	--step-5: clamp(2.8rem, calc(2.45rem + 1.77vw), 3.82rem);
+	--step-8: clamp(4.84rem, calc(3.93rem + 4.54vw), 7.45rem);
+
+	--space-3xs: clamp(0.31rem, calc(0.31rem + 0vw), 0.31rem);
+	--space-2xs: clamp(0.56rem, calc(0.54rem + 0.11vw), 0.63rem);
+	--space-xs: clamp(0.88rem, calc(0.85rem + 0.11vw), 0.94rem);
+	--space-s: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+	--space-m: clamp(1.69rem, calc(1.62rem + 0.33vw), 1.88rem);
+	--space-l: clamp(2.25rem, calc(2.16rem + 0.43vw), 2.5rem);
+	--space-xl: clamp(3.38rem, calc(3.24rem + 0.65vw), 3.75rem);
+	--space-2xl: clamp(4.5rem, calc(4.33rem + 0.87vw), 5rem);
+	--space-3xl: clamp(6.75rem, calc(6.49rem + 1.3vw), 7.5rem);
+}
+
+body {
+	background: var(--clr-bg);
+	color: var(--clr-txt);
+	font-family: var(--ff-sans);
+	font-size: var(--step-0);
+	padding: 0 var(--space-xs);
+
+	padding-bottom: var(--space-s);
+}
+h1,
+h2,
+h3,
+.nav {
+	font-family: var(--ff-serif);
+	font-weight: normal;
+	user-select: none;
+}
+
+h1 {
+	font-size: var(--step-8);
+	text-align: center;
+}
+
+h2 {
+	font-size: var(--step-5);
+}
+a:not(nav a) {
+	text-decoration: none;
+	background: var(--clr-acc-1);
+	padding: var(--space-3xs) var(--space-s);
+	user-select: none;
+}
