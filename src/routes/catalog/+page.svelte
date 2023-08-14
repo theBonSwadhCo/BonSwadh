@@ -16,9 +16,9 @@
 	<header>
 		<h1>Our Catalog</h1>
 		<p>
-			Lorem ipsum dolor sit amet consectetur. Orci arcu ac ipsum dignissim ut etiam. Pharetra mi
-			morbi ultrices parturient scelerisque aliquam imperdiet purus eros. Convallis eu felis egestas
-			ante tortor aliquam ornare turpis.
+			Discover a world of flavors with our diverse recipe collection, designed to delight your taste
+			buds and satisfy every craving. Experience the joy of culinary exploration as we bring you an
+			array of dishes that cater to a variety of preferences and occasions.
 		</p>
 
 		<input placeholder="Search for Recipe" type="text" bind:value={searchedTerm} />
