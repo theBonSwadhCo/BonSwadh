@@ -95,6 +95,12 @@
 		gap: var(--space-s);
 	}
 
+	@media screen and (max-width: 600px) {
+		section {
+			grid-template-columns: 1fr;
+		}
+	}
+
 	img {
 		aspect-ratio: 1/1;
 		object-fit: cover;
