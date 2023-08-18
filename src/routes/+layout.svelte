@@ -2,6 +2,9 @@
 	import './style.css';
 </script>
 
+<svelte:head>
+	<title>Bon Swadh</title>
+</svelte:head>
 <nav>
 	<ul>
 		<li><a href="/">Bon-Swadh</a></li>

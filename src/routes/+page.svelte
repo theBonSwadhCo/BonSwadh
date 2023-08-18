@@ -1,4 +1,5 @@
-<img class="img1" src="cob.svg" alt="" /><img src="basil.svg" alt="" class="img2" />
+<img src="/left.png" alt="" class="left" /><img src="/right.png" alt="" class="right" />
+
 <main>
 	<header>
 		<h1>Bon-Swadh</h1>
@@ -15,29 +16,6 @@
 </main>
 
 <style>
-	img {
-		position: absolute;
-		max-height: 80vh;
-		max-width: 35vw;
-		bottom: 20%;
-		opacity: 0.4;
-		position: absolute;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		transform: translateY(-50%);
-		user-select: none;
-		-webkit-user-drag: none;
-
-		z-index: -2;
-	}
-
-	.img1 {
-		right: 2.5%;
-	}
-	.img2 {
-		left: 2.5%;
-	}
-
 	header {
 		position: relative;
 		display: flex;
@@ -45,14 +23,62 @@
 		align-items: center;
 		text-align: center;
 		flex-direction: column;
-		min-height: 100%;
 		gap: var(--space-xs);
 
-		-webkit-transform: translateY(35%);
-		transform: translateY(35%);
+		width: 90%;
+		background: #cc9b67;
+		border-radius: var(--space-2xs);
+		padding: var(--space-2xl);
+		/* -webkit-transform: translateY(35%); */
+		/* transform: translateY(35%); */
 	}
 
+	header > * {
+		z-index: 2;
+	}
+
+	main {
+		min-height: 93vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 	p {
 		max-width: 60ch;
+	}
+
+	a {
+		border: #000 2px solid;
+	}
+
+	img {
+		position: absolute;
+		z-index: 1;
+		max-height: 60%;
+		bottom: 50%;
+		transform: translateY(50%);
+	}
+	.left {
+		left: 0;
+	}
+	.right {
+		right: 0;
+	}
+
+	@media screen and (max-width: 1000px) {
+		img {
+			max-height: 40%;
+		}
+	}
+	@media screen and (max-width: 800px) {
+		img {
+			max-height: 22%;
+		}
+	}
+	@media screen and (max-width: 700px) {
+		img {
+			display: none;
+		}
 	}
 </style>

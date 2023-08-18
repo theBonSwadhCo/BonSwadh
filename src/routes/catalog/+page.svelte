@@ -28,6 +28,12 @@
 			{#each filteredrecipes as item}
 				<article>
 					<img src={item.properties.cover.files[0].name} alt="" />
+					<div class="tag-holder">
+						{#each item.properties.Tags.multi_select as tag}
+							<span class="tag {tag.color}">{tag.name}</span>
+						{/each}
+						<span class="tag--time">{item.properties.time.number} minutes</span>
+					</div>
 					<h2>{item.properties.Name.title[0].plain_text}</h2>
 					<p>{item.properties.about.rich_text[0].plain_text}</p>
 					<a href="/catalog/{item.id}">View Recipe</a>
@@ -93,6 +99,7 @@
 		grid-template-columns: 1fr 1fr;
 		/* place-items: center; */
 		gap: var(--space-s);
+		row-gap: var(--space-xl);
 	}
 
 	@media screen and (max-width: 600px) {
@@ -115,5 +122,27 @@
 
 	a {
 		max-width: fit-content;
+	}
+
+	.tag-holder {
+		display: flex;
+		gap: var(--space-2xs);
+		flex-wrap: wrap;
+	}
+
+	.tag,
+	.tag--time {
+		display: inline-block;
+		padding-inline: var(--space-s);
+		padding-block: 0px;
+		border-radius: 100rem;
+	}
+
+	.tag.green {
+		background: var(--clr-acc-2);
+	}
+
+	.tag--time {
+		border: 2px #000 solid;
 	}
 </style>
